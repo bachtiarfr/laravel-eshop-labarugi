@@ -74,12 +74,12 @@
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<div class="left">
-								<p>Copyright © {{date('Y')}} <a href="https://github.com/Prajwal100" target="_blank">Prajwal Rai</a>  -  All Rights Reserved.</p>
+								<p>Copyright © {{date('Y')}} -  All Rights Reserved.</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-12">
 							<div class="right">
-								<img src="{{asset('backend/img/payments.png')}}" alt="#">
+								{{-- <img src="{{asset('backend/img/payments.png')}}" alt="#"> --}}
 							</div>
 						</div>
 					</div>
