@@ -169,10 +169,10 @@
                                             <div class="product-img">
                                                 <a href="{{route('product-detail',$product->slug)}}">
                                                     @php
-                                                        $photo=explode(',',$product->photo);
+                                                        $photo=$product->photo;
                                                     @endphp
-                                                    <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                                    <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                                    <img class="default-img" src="{{$photo}}" alt="{{$photo}}">
+                                                    <img class="hover-img" src="{{$photo}}" alt="{{$photo}}">
                                                     @if($product->discount)
                                                                 <span class="price-dec">{{$product->discount}} % Off</span>
                                                     @endif

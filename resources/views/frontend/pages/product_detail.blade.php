@@ -47,14 +47,10 @@
 											<div class="flexslider-thumbnails">
 												<ul class="slides">
 													@php 
-														$photo=explode(',',$product_detail->photo);
+														$photo=$product_detail->photo;
 													// dd($photo);
 													@endphp
-													@foreach($photo as $data)
-														<li data-thumb="{{$data}}" rel="adjustX:10, adjustY:">
-															<img src="{{$data}}" alt="{{$data}}">
-														</li>
-													@endforeach
+													<img src="{{$photo}}" alt="{{$photo}}">
 												</ul>
 											</div>
 											<!-- End Images slider -->
@@ -323,10 +319,10 @@
                                     <div class="product-img">
 										<a href="{{route('product-detail',$data->slug)}}">
 											@php 
-												$photo=explode(',',$data->photo);
+												$photo=$data->photo;
 											@endphp
-                                            <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                            <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                            <img class="default-img" src="{{$photo}}" alt="{{$photo}}">
+                                            <img class="hover-img" src="{{$photo}}" alt="{{$photo}}">
                                             <span class="price-dec">{{$data->discount}} % Off</span>
                                                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                         </a>
