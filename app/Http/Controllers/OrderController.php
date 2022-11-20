@@ -12,6 +12,8 @@ use Notification;
 use Helper;
 use Illuminate\Support\Str;
 use App\Notifications\StatusNotification;
+use App\Models\{ OrderDetail, Product };
+use App\Services\Midtrans\SnapTokenService;
 
 class OrderController extends Controller
 {
@@ -303,5 +305,27 @@ class OrderController extends Controller
             $data[$monthName] = (!empty($result[$i]))? number_format((float)($result[$i]), 2, '.', '') : 0.0;
         }
         return $data;
+    }
+        public function orderView(){
+        $orders = Order::all();
+        $products = Product::all();
+
+        return view('order.index', compact('orders', 'products'));
+    }
+    public function generateSnapToken(Request $request)
+    {
+        $order = [
+            'transaction_details' => [
+                'order_id' => 'ORD-'.strtoupper(Str::random(10)),
+                'gross_amount' => $request->$total,
+            ],
+
+        ];
+
+        $snapTokenService = new SnapTokenService();
+        $snapToken = $snapTokenService->getSnapToken($order);
+
+
+        return ['snap_token' => $snapToken, 'carts' => $order];
     }
 }
