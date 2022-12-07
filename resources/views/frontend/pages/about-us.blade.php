@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || About Us')
+@section('title','RG-COMPANY || About Us')
 
 @section('main-content')
 
