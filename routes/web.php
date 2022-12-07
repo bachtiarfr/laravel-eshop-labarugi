@@ -183,3 +183,11 @@ Route::group(['prefix'=>'/user','middleware'=>['user']],function(){
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::get('orderTes', 'OrderController@orderView')->name('order.index');
+Route::post('orders/generate-snap-token', 'OrderController@generateSnapToken')->name('orders.generateSnapToken');
+Route::post('orders/save-order', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('orders.saveOrder');
+
+Route::get('/snap', 'SnapController@snap');
+Route::post('/snaptoken', 'SnapController@token');
+Route::post('/snapfinish', 'SnapController@finish');
