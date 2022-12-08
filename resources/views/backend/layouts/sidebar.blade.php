@@ -2,10 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
-      <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
-      </div>
-      <div class="sidebar-brand-text mx-3">Admin</div>
+      <div class="sidebar-brand-text mx-3">RG COMPANY</div>
     </a>
 
     <!-- Divider -->
@@ -99,7 +96,7 @@
     </li>
 
     {{-- Shipping --}}
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
           <i class="fas fa-truck"></i>
           <span>Shipping</span>
@@ -111,7 +108,7 @@
             <a class="collapse-item" href="{{route('shipping.create')}}">Add Shipping</a>
           </div>
         </div>
-    </li>
+    </li> --}}
 
     <!--Orders -->
     <li class="nav-item">
@@ -138,7 +135,7 @@
     </div>
 
     <!-- Posts -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCollapse" aria-expanded="true" aria-controls="postCollapse">
         <i class="fas fa-fw fa-folder"></i>
         <span>Posts</span>
@@ -150,7 +147,7 @@
           <a class="collapse-item" href="{{route('post.create')}}">Add Post</a>
         </div>
       </div>
-    </li>
+    </li> --}}
 
      <!-- Category -->
      <li class="nav-item">
@@ -183,12 +180,12 @@
     </li>
 
       <!-- Comments -->
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="{{route('comment.index')}}">
             <i class="fas fa-comments fa-chart-area"></i>
             <span>Comments</span>
         </a>
-      </li>
+      </li> --}}
 
 
     <!-- Divider -->
@@ -197,11 +194,11 @@
     <div class="sidebar-heading">
         General Settings
     </div>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link" href="{{route('coupon.index')}}">
           <i class="fas fa-table"></i>
           <span>Coupon</span></a>
-    </li>
+    </li> --}}
      <!-- Users -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">

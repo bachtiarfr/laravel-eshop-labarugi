@@ -10,6 +10,7 @@ use App\User;
 use PDF;
 use Notification;
 use Helper;
+use DB;
 use Illuminate\Support\Str;
 use App\Notifications\StatusNotification;
 use App\Models\{ OrderDetail, Product };
@@ -284,7 +285,12 @@ class OrderController extends Controller
     public function incomeChart(Request $request){
         $year=\Carbon\Carbon::now()->year;
         // dd($year);
-        $items=Order::with(['cart_info'])->whereYear('created_at',$year)->where('status','delivered')->get()
+
+        // $items = DB::table('orders')
+        //     ->select('total_amount')
+        //     ->get();
+
+        $items=Order::with(['cart_info'])->whereYear('created_at',$year)->get()
             ->groupBy(function($d){
                 return \Carbon\Carbon::parse($d->created_at)->format('m');
             });
